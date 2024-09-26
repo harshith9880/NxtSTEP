@@ -24,6 +24,9 @@ public final class ActivityWarrior2PoseBinding implements ViewBinding {
   public final TextView overallCountTextView;
 
   @NonNull
+  public final TextView qualityScoreTextView;
+
+  @NonNull
   public final TextView statusTextView;
 
   @NonNull
@@ -33,10 +36,12 @@ public final class ActivityWarrior2PoseBinding implements ViewBinding {
   public final TextView trackerTextView;
 
   private ActivityWarrior2PoseBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView overallCountTextView, @NonNull TextView statusTextView,
-      @NonNull Toolbar toolbar, @NonNull TextView trackerTextView) {
+      @NonNull TextView overallCountTextView, @NonNull TextView qualityScoreTextView,
+      @NonNull TextView statusTextView, @NonNull Toolbar toolbar,
+      @NonNull TextView trackerTextView) {
     this.rootView = rootView;
     this.overallCountTextView = overallCountTextView;
+    this.qualityScoreTextView = qualityScoreTextView;
     this.statusTextView = statusTextView;
     this.toolbar = toolbar;
     this.trackerTextView = trackerTextView;
@@ -75,6 +80,12 @@ public final class ActivityWarrior2PoseBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.qualityScoreTextView;
+      TextView qualityScoreTextView = ViewBindings.findChildViewById(rootView, id);
+      if (qualityScoreTextView == null) {
+        break missingId;
+      }
+
       id = R.id.statusTextView;
       TextView statusTextView = ViewBindings.findChildViewById(rootView, id);
       if (statusTextView == null) {
@@ -94,7 +105,7 @@ public final class ActivityWarrior2PoseBinding implements ViewBinding {
       }
 
       return new ActivityWarrior2PoseBinding((ConstraintLayout) rootView, overallCountTextView,
-          statusTextView, toolbar, trackerTextView);
+          qualityScoreTextView, statusTextView, toolbar, trackerTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

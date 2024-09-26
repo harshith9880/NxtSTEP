@@ -21,6 +21,9 @@ public final class ActivityStepTrackerBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final TextView calorieCountTextView;
+
+  @NonNull
   public final Button startTrackingButton;
 
   @NonNull
@@ -30,9 +33,10 @@ public final class ActivityStepTrackerBinding implements ViewBinding {
   public final Button stopTrackingButton;
 
   private ActivityStepTrackerBinding(@NonNull LinearLayout rootView,
-      @NonNull Button startTrackingButton, @NonNull TextView stepCountTextView,
-      @NonNull Button stopTrackingButton) {
+      @NonNull TextView calorieCountTextView, @NonNull Button startTrackingButton,
+      @NonNull TextView stepCountTextView, @NonNull Button stopTrackingButton) {
     this.rootView = rootView;
+    this.calorieCountTextView = calorieCountTextView;
     this.startTrackingButton = startTrackingButton;
     this.stepCountTextView = stepCountTextView;
     this.stopTrackingButton = stopTrackingButton;
@@ -65,6 +69,12 @@ public final class ActivityStepTrackerBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.calorieCountTextView;
+      TextView calorieCountTextView = ViewBindings.findChildViewById(rootView, id);
+      if (calorieCountTextView == null) {
+        break missingId;
+      }
+
       id = R.id.startTrackingButton;
       Button startTrackingButton = ViewBindings.findChildViewById(rootView, id);
       if (startTrackingButton == null) {
@@ -83,8 +93,8 @@ public final class ActivityStepTrackerBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityStepTrackerBinding((LinearLayout) rootView, startTrackingButton,
-          stepCountTextView, stopTrackingButton);
+      return new ActivityStepTrackerBinding((LinearLayout) rootView, calorieCountTextView,
+          startTrackingButton, stepCountTextView, stopTrackingButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

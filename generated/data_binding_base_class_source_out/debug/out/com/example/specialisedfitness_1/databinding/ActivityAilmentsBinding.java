@@ -5,10 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -24,55 +21,37 @@ public final class ActivityAilmentsBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final Button button3;
+
+  @NonNull
+  public final Button button4;
+
+  @NonNull
   public final Button button5;
 
   @NonNull
-  public final Button button6;
+  public final ImageView imageView;
 
   @NonNull
-  public final Button button7;
+  public final ImageView imageView3;
 
   @NonNull
-  public final EditText editTextNumber;
-
-  @NonNull
-  public final ImageButton imageButton3;
-
-  @NonNull
-  public final ImageButton imageButton4;
-
-  @NonNull
-  public final ImageButton imageButton5;
-
-  @NonNull
-  public final ImageView imageView10;
+  public final ImageView imageView4;
 
   @NonNull
   public final ImageView imageView5;
 
-  @NonNull
-  public final ImageView imageView9;
-
-  @NonNull
-  public final TextView textView3;
-
-  private ActivityAilmentsBinding(@NonNull ConstraintLayout rootView, @NonNull Button button5,
-      @NonNull Button button6, @NonNull Button button7, @NonNull EditText editTextNumber,
-      @NonNull ImageButton imageButton3, @NonNull ImageButton imageButton4,
-      @NonNull ImageButton imageButton5, @NonNull ImageView imageView10,
-      @NonNull ImageView imageView5, @NonNull ImageView imageView9, @NonNull TextView textView3) {
+  private ActivityAilmentsBinding(@NonNull ConstraintLayout rootView, @NonNull Button button3,
+      @NonNull Button button4, @NonNull Button button5, @NonNull ImageView imageView,
+      @NonNull ImageView imageView3, @NonNull ImageView imageView4, @NonNull ImageView imageView5) {
     this.rootView = rootView;
+    this.button3 = button3;
+    this.button4 = button4;
     this.button5 = button5;
-    this.button6 = button6;
-    this.button7 = button7;
-    this.editTextNumber = editTextNumber;
-    this.imageButton3 = imageButton3;
-    this.imageButton4 = imageButton4;
-    this.imageButton5 = imageButton5;
-    this.imageView10 = imageView10;
+    this.imageView = imageView;
+    this.imageView3 = imageView3;
+    this.imageView4 = imageView4;
     this.imageView5 = imageView5;
-    this.imageView9 = imageView9;
-    this.textView3 = textView3;
   }
 
   @Override
@@ -102,51 +81,39 @@ public final class ActivityAilmentsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.button3;
+      Button button3 = ViewBindings.findChildViewById(rootView, id);
+      if (button3 == null) {
+        break missingId;
+      }
+
+      id = R.id.button4;
+      Button button4 = ViewBindings.findChildViewById(rootView, id);
+      if (button4 == null) {
+        break missingId;
+      }
+
       id = R.id.button5;
       Button button5 = ViewBindings.findChildViewById(rootView, id);
       if (button5 == null) {
         break missingId;
       }
 
-      id = R.id.button6;
-      Button button6 = ViewBindings.findChildViewById(rootView, id);
-      if (button6 == null) {
+      id = R.id.imageView;
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
+      if (imageView == null) {
         break missingId;
       }
 
-      id = R.id.button7;
-      Button button7 = ViewBindings.findChildViewById(rootView, id);
-      if (button7 == null) {
+      id = R.id.imageView3;
+      ImageView imageView3 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView3 == null) {
         break missingId;
       }
 
-      id = R.id.editTextNumber;
-      EditText editTextNumber = ViewBindings.findChildViewById(rootView, id);
-      if (editTextNumber == null) {
-        break missingId;
-      }
-
-      id = R.id.imageButton3;
-      ImageButton imageButton3 = ViewBindings.findChildViewById(rootView, id);
-      if (imageButton3 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageButton4;
-      ImageButton imageButton4 = ViewBindings.findChildViewById(rootView, id);
-      if (imageButton4 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageButton5;
-      ImageButton imageButton5 = ViewBindings.findChildViewById(rootView, id);
-      if (imageButton5 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageView10;
-      ImageView imageView10 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView10 == null) {
+      id = R.id.imageView4;
+      ImageView imageView4 = ViewBindings.findChildViewById(rootView, id);
+      if (imageView4 == null) {
         break missingId;
       }
 
@@ -156,21 +123,8 @@ public final class ActivityAilmentsBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageView9;
-      ImageView imageView9 = ViewBindings.findChildViewById(rootView, id);
-      if (imageView9 == null) {
-        break missingId;
-      }
-
-      id = R.id.textView3;
-      TextView textView3 = ViewBindings.findChildViewById(rootView, id);
-      if (textView3 == null) {
-        break missingId;
-      }
-
-      return new ActivityAilmentsBinding((ConstraintLayout) rootView, button5, button6, button7,
-          editTextNumber, imageButton3, imageButton4, imageButton5, imageView10, imageView5,
-          imageView9, textView3);
+      return new ActivityAilmentsBinding((ConstraintLayout) rootView, button3, button4, button5,
+          imageView, imageView3, imageView4, imageView5);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
